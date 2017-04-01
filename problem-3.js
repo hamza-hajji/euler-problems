@@ -22,3 +22,5 @@ function maxPrimeFactor(limit) {
 }
 
 var answer = maxPrimeFactor(600851475143)
+
+console.log(answer)

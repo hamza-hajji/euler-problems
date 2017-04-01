@@ -1,18 +1,22 @@
-var LIMIT = 10,
-	fib = [],
-	sum = 0
+function fibonacci_seq(limit) {
+	let fib = []
 
-fib.push(1)
-fib.push(2)
+	fib.push(1)
+	fib.push(2)
 
-for (let i = 2; i <= LIMIT; i++) {
-	fib[i] = fib[i - 1] + fib[i - 2]
+	for (let i = 2; i <= LIMIT; i++) {
+		fib[i] = fib[i - 1] + fib[i - 2]
+	}
+
+	return fib
 }
 
-// filtering only even numbers and summing them
-
-sum = fib.filter(function (elem) {
+var sum = fibonacci_seq(4e6)
+.filter(function (elem) { // get the even numbers
 	return elem % 2 === 0
-}).reduce(function (a, b) {
+})
+.reduce(function (a, b) { // sum the elements
 	return a + b
 }, 0)
+
+console.log(sum)
